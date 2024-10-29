@@ -1,16 +1,18 @@
-public class detectRepeater implements patternDetector{
+public class RepeaterDetector implements PatternDetector {
     char c;
     int numRepeat;
-    //    Todo: datamember for list of things
     int indexOfRepeating = -1;
     String pattern;
 
-    public detectRepeater(char c, int numRepeat){
+    public RepeaterDetector(char c, int numRepeat){
         this.c = c;
         this.numRepeat = numRepeat;
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < numRepeat; i++){
-            this.pattern += c;
+            sb.append(c);
         }
+        this.pattern = sb.toString();
+
     }
 
     public int detect(GenomeAnalyzer analyzer){
